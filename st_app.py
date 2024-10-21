@@ -1,9 +1,9 @@
 import joblib
 import pandas as pd
 import streamlit as st
-# import seaborn as sns
-# import plotly.express as px
-# import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+import matplotlib.pyplot as plt
 
 # Load data and model
 df2 = pd.read_csv('bayut_units_cleaned.csv')  # Assuming df2 is the cleaned dataset
@@ -47,18 +47,18 @@ def inputs():
     if st.button("Predict"):
         predict(area, rooms, property_type[0], city[0])
 
-# def plots(result=0):
-#     # Plotting the result and some visualizations
-#     st.title("Result")
+def plots(result=0):
+    # Plotting the result and some visualizations
+    st.title("Result")
     
-#     st.markdown(f"**Estimated Property Price: {result:,} EGP**")
+    st.markdown(f"**Estimated Property Price: {result:,} EGP**")
     
-#     fig = plt.figure()
-#     sns.histplot(df2, x='Price')
+    fig = plt.figure()
+    sns.histplot(df2, x='Price')
     
-#     st.pyplot(fig)
+    st.pyplot(fig)
 
-#     st.button("Make Another Prediction", on_click=inputs)
+    st.button("Make Another Prediction", on_click=inputs)
 
 # Page Navigation
 page = st.sidebar.selectbox("Select Page", ["Home", "Predict", "Plots"])
