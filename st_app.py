@@ -32,7 +32,7 @@ def inputs():
     # Inputs for prediction
     st.title("Predict Property Price")
     
-    area = st.number_input("Area (in sqft)",min_value=1)
+    area = st.number_input("Area (in sqft)",min_value=20)
     rooms = st.number_input("Number of Rooms", min_value=1, max_value=10)
     
     property_type = st.selectbox("Property Type", [[0,'Apartments'], [2,'Villas and Houses'], [1,'Vacation Properties']])
